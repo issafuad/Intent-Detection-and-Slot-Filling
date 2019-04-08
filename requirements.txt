@@ -1,0 +1,7 @@
+numpy==1.16.2
+sklearn
+gensim
+pandas==0.24.2
+tensorflow==1.13.1
+flask==1.0.2
+nltk==3.4

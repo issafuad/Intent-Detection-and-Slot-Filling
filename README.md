@@ -1,3 +1,11 @@
+# Description
+This project trains an ML model for joint intent detection and slot filling using the ATIS dataset.
+
+# Architecture
+The architecture chosen in this implementation is similar to the “Attention-based RNN model for joint intent detection and slot filling” in the following paper. [paper](https://www.isca-speech.org/archive/Interspeech_2016/pdfs/1352.PDF)
+The only difference is that the context vector was not concatenated with the time-step hidden state vector in slot filling. One reason for choosing this model versus the encoder-decoder model is that it is computationally more efficient since it only reads the input once – as opposed to twice in the encoder-decoder model.
+Pre-trained word embeddings have been used in this task. Some reserved tokens such as BOS, EOS and unknown words have been initialised randomly.
+
 # Setting up
 * Create an environment - e.g. using conda - and install the requirements.
 ```
@@ -32,7 +40,8 @@ python runner_test.py  ./data/models/name_of_model/
 
 # Serving
 
-* Move model files to the model_served directory.
+* The directory for the served model is data/models/best/
+* Move any model you want to serve to there.
 * You can expose the server of the model by running
 
 ```
